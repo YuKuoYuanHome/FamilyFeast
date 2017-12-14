@@ -5,7 +5,9 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-
+    //bmob后台云初始化
+    var Bmob = require('utils/bmob.js');
+    Bmob.initialize("4db8083156efeef512c9cd69785403dc", "16c73542286960f74333e531876c387d");
     // 登录
     wx.login({
       success: res => {
