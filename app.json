@@ -22,13 +22,13 @@
         "text": "首页"
       },
       {
-        "pagePath": "page/index/index",
+        "pagePath": "page/shop/shopcart",
         "iconPath": "image/home_shop_car_unchecked.png",
         "selectedIconPath": "image/home_shop_car_checked.png",
         "text": "购物车"
       },
       {
-        "pagePath": "page/index/index",
+        "pagePath": "page/shop/shopcart",
         "iconPath": "image/home_me_unchecked.png",
         "selectedIconPath": "image/home_me_checked.png",
         "text": "我的"
