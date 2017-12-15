@@ -2,7 +2,8 @@
   "pages":[
     "pages/index/index",
     "pages/logs/logs",
-    "pages/shop/shopcart"
+    "pages/shop/shopcart",
+    "pages/mine/mine"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -29,7 +30,7 @@
         "text": "购物车"
       },
       {
-        "pagePath": "pages/shop/shopcart",
+        "pagePath": "pages/mine/mine",
         "iconPath": "image/home_me_unchecked.png",
         "selectedIconPath": "image/home_me_checked.png",
         "text": "我的"
