@@ -10,25 +10,25 @@
     "navigationBarTextStyle":"black"
   },
   "tabBar": {
-    "color": "#7A7E83",
-    "selectedColor": "#3cc51f",
+    "color": "#8a8a8a",
+    "selectedColor": "#d81e06",
     "borderStyle": "black",
     "backgroundColor": "#ffffff",
     "list": [
       {
-        "pagePath": "page/index/index",
+        "pagePath": "pages/index/index",
         "iconPath": "image/home_main_unchecked.png",
         "selectedIconPath": "image/home_main_checked.png",
         "text": "首页"
       },
       {
-        "pagePath": "page/shop/shopcart",
+        "pagePath": "pages/shop/shopcart",
         "iconPath": "image/home_shop_car_unchecked.png",
         "selectedIconPath": "image/home_shop_car_checked.png",
         "text": "购物车"
       },
       {
-        "pagePath": "page/shop/shopcart",
+        "pagePath": "pages/shop/shopcart",
         "iconPath": "image/home_me_unchecked.png",
         "selectedIconPath": "image/home_me_checked.png",
         "text": "我的"
