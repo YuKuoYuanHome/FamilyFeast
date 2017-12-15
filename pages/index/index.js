@@ -1,7 +1,7 @@
 //index.js
 //获取应用实例
 const app = getApp()
-
+var Bmob = require('../../utils/bmob.js');
 Page({
   data: {
     motto: 'Hello World',
