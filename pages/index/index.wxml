@@ -1,9 +1,13 @@
 <!--index.wxml-->
 <view>
-  <button>距离</button>
-  <button>人气</button>
-  <button>评分</button>
+  <view class="flex-wrp">
+    <button class="flex-item">距离</button>
+    <button class="flex-item">人气</button>
+    <button class="flex-item">评分</button>
+  </view>
   <view wx:for="{{array}}">
-  <view>测试</view>
+    <view>测试标题</view>
+    <view> {{index}}: {{item.message}}</view>
+    <view>测试时间</view>
   </view>
 </view>
