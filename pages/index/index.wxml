@@ -1,5 +1,12 @@
 <!--index.wxml-->
 <view>
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" width="355" height="150" />
+      </swiper-item>
+    </block>
+  </swiper>
   <view class="flex-wrp">
     <button class="flex-item">距离</button>
     <button class="flex-item">人气</button>
