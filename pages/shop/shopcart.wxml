@@ -1,13 +1,10 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="section">
-    <input bindinput="bindphone" type="number" placeholder="请输入手机号" />
+  <view>
+    <input bindinput="bindphone" type="number" placeholder="请输入手机号" style="width:100%;height:50px;" />
   </view>
-  <view class="section">
-    <input bindinput="bindpwd" password type="text" placeholder="请输入密码" />
+  <view>
+    <input bindinput="bindpwd" password type="text" placeholder="请输入密码" style="width:100%;height:50px;" />
   </view>
-  <button bindtap="adduser">注册</button>
-  <view wx:for="{{array}}">
-    {{index}}: {{item.message}}
-  </view>
+  <button type="primary" bindtap="primary" style="width:60%;height:40px;"> 注册 </button>
 </view>

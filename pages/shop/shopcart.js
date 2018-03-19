@@ -6,32 +6,31 @@ Page({
   data: {
     name: "",
     pwd: "",
-    array: [{
-      message: 'foo',
-    }, {
-      message: 'bar'
-    }]
   },
   //事件处理函数
   adduser: function () {
-    var User = Bmob.Object.extend("_User");
-    var user = new User();
-    if (this.data.name.length == 0)
+    if (this.data.name.length == 0) {
       wx.showToast({
         title: '名字不能为空',
         icon: 'none',
         duration: 1000
       })
-     return;
-    if (this.data.pwd.length == 0) 
+      return;
+    }
+    if (this.data.pwd.length == 0) {
       wx.showToast({
         title: '密码不能为空',
         icon: 'none',
         duration: 1000
       })
       return;
+    }
+
+    var User = Bmob.Object.extend("_User");
+    var user = new User();
     user.set("username", this.data.name);
     user.set("password", this.data.pwd);
+    console.log("开始创建用户", this.data.name, this.data.pwd);
     //添加数据，第一个入口参数是null
     user.save(null, {
       success: function (result) {

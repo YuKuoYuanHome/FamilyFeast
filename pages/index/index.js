@@ -4,93 +4,93 @@ const app = getApp()
 var Bmob = require('../../utils/bmob.js');
 Page({
   data: {
+    //分页标签class条件判断的值
+    tabArr: {
+      tabCurrentIndex: 0
+    },
     imgUrls: [
-      'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
+      'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=49374771,1143102565&fm=27&gp=0.jpg',
+      'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1973832742,3333223898&fm=27&gp=0.jpg',
+      'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=821564292,346385585&fm=27&gp=0.jpg'
     ],
+    avatar: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1683741969,4035451526&fm=27&gp=0.jpg',
     indicatorDots: true,
     autoplay: true,
     interval: 2000,
     duration: 1000,
     motto: 'Hello World',
     array: [{
-      message: 'foo',
+      name: '远飞家宴城',
+      message: '销量: 100000000000',
+      address: '地址: 北京市昌平区霍营旗胜家园',
     }, {
-      message: 'bar'
+      name: '苏城家宴城',
+      message: '销量: 1002046600',
+      address: '地址: 北京市海淀区育新小区',
     }, {
-      message: 'bar'
+      name: '路飞家宴城',
+      message: '销量: 100000000000',
+      address: '地址: 东海·霜月村',
     }, {
-      message: 'bar'
+      name: '乌索普家宴城',
+      message: '销量: 100000000000',
+      address: '地址: 北京市昌平区霍营旗胜家园',
     }, {
-      message: 'bar'
+      name: '乔巴家宴城',
+      message: '销量: 100000000000',
+      address: '地址: 北京市昌平区霍营旗胜家园',
     }, {
-      message: 'bar'
+      name: '娜美家宴城',
+      message: '销量: 100000000000',
+      address: '地址: 北京市昌平区霍营旗胜家园',
     }, {
-      message: 'bar'
+      name: '远飞家宴城',
+      message: '销量: 100000000000',
+      address: '地址: 北京市昌平区霍营旗胜家园',
     }, {
-      message: 'bar'
+      name: '远飞家宴城',
+      message: '销量: 100000000000',
+      address: '地址: 北京市昌平区霍营旗胜家园',
     }, {
-      message: 'bar'
+      name: '远飞家宴城',
+      message: '销量: 100000000000',
+      address: '地址: 北京市昌平区霍营旗胜家园',
     }, {
-      message: 'bar'
+      name: '远飞家宴城',
+      message: '销量: 100000000000',
+      address: '地址: 北京市昌平区霍营旗胜家园',
     }, {
-      message: 'bar'
+      name: '远飞家宴城',
+      message: '销量: 100000000000',
+      address: '地址: 北京市昌平区霍营旗胜家园',
     }, {
-      message: 'bar'
+      name: '远飞家宴城',
+      message: '销量: 100000000000',
+      address: '地址: 北京市昌平区霍营旗胜家园',
     }, {
-      message: 'bar'
+      name: '远飞家宴城',
+      message: '销量: 100000000000',
+      address: '地址: 北京市昌平区霍营旗胜家园',
     }, {
-      message: 'bar'
+      name: '远飞家宴城',
+      message: '销量: 100000000000',
+      address: '地址: 北京市昌平区霍营旗胜家园',
     }, {
-      message: 'bar'
+      name: '远飞家宴城',
+      message: '销量: 100000000000',
+      address: '地址: 北京市昌平区霍营旗胜家园',
     }, {
-      message: 'bar'
+      name: '远飞家宴城',
+      message: '销量: 100000000000',
+      address: '地址: 北京市昌平区霍营旗胜家园',
     }],
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   //事件处理函数
-  bindViewTap: function () {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
-  },
-  onLoad: function () {
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse) {
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
-      })
-    }
-  },
-  getUserInfo: function (e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
+  //触摸分页标签触发事件
+  veHandle: function (e) {
+    var currentIndex = e.target.dataset.index
     this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
+      "tabArr.tabCurrentIndex": currentIndex
     })
   }
 })
